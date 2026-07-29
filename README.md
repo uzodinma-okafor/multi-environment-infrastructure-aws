@@ -26,18 +26,5 @@ Infrastructure as Code (IaC) using Terraform to manage AWS resources across thre
   ├── .gitignore (add terraform files)
   └── README.md (initial)
 
-  ## Getting Started
-```bash
-# Clone repo
-git clone https://github.com/YOUR_USERNAME/multi-environment-infrastructure-aws.git
-cd multi-environment-infrastructure-aws
-
-# Deploy to dev (coming Week 1)
-cd terraform/environments/dev
-terraform init
-terraform plan
-terraform apply
-```
-
 ## Status
 **Week 1**: Foundation setup and initial architecture planning.
