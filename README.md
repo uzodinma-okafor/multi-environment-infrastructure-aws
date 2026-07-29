@@ -12,16 +12,19 @@ Infrastructure as Code (IaC) using Terraform to manage AWS resources across thre
 - **GitHub Actions**: CI/CD automation (coming soon)
 
 ## Project Structure
-terraform/
-├── main.tf # Core AWS resources
-├── variables.tf # Input variables
-├── outputs.tf # Deployment outputs
-└── environments/
-├── dev/ # Development environment
-├── staging/ # Staging environment
-└── prod/ # Production environment
-docs/
-└── architecture.md # Architecture documentation
+  multi-environment-infrastructure-aws/
+  ├── terraform/
+  │   ├── main.tf
+  │   ├── variables.tf
+  │   ├── outputs.tf
+  │   └── environments/
+  │       ├── dev/
+  │       ├── staging/
+  │       └── prod/
+  ├── docs/
+  │   └── architecture.md
+  ├── .gitignore (add terraform files)
+  └── README.md (initial)
 
   ## Getting Started
 ```bash
