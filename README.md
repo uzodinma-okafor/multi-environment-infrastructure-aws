@@ -28,3 +28,34 @@ Infrastructure as Code (IaC) using Terraform to manage AWS resources across thre
 
 ## Status
 **Week 1**: Foundation setup and initial architecture planning.
+
+## Getting Started
+
+### Prerequisites
+- AWS account (free tier)
+- Terraform installed
+- AWS CLI configured
+
+### Deploy to Dev Environment
+
+```bash
+cd terraform/environments/dev
+terraform init
+terraform plan
+terraform apply
+```
+
+### View Deployed Resources
+
+After deployment, run:
+```bash
+terraform output
+```
+
+This shows your instance IP, VPC ID, security group ID, and more.
+
+### Verify in AWS Console
+
+1. Go to AWS Console
+2. Go to EC2 → Instances
+3. You should see a running instance named "dev-instance"
