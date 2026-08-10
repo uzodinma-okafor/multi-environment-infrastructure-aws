@@ -51,7 +51,7 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
   route {
-    cidr_block      = "0.0.0.0/0"
+    cidr_block      = var.route_destination_cidr
     gateway_id      = aws_internet_gateway.main.id
   }
 
@@ -74,17 +74,17 @@ resource "aws_security_group" "main" {
   vpc_id      = aws_vpc.main.id
 
   ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]  # WARNING: Open to world. Use your IP in production!
+    from_port   = var.ssh_port
+    to_port     = var.ssh_port
+    protocol    = var.ssh_protocol
+    cidr_blocks = var.allowed_ssh_cidr
   }
 
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.allowed_egress_cidr
   }
 
   tags = {
@@ -109,11 +109,11 @@ resource "aws_instance" "main" {
 # Get latest Ubuntu AMI
 data "aws_ami" "ubuntu" {
   most_recent = true
-  owners      = ["099720109477"]  # Canonical
+  owners      = [var.ami_owner]
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+    values = [var.ami_name_pattern]
   }
 
   filter {
