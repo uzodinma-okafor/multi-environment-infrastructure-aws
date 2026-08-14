@@ -17,7 +17,8 @@ AWS Account (us-west-1)
 │
 └── Security Group
 ├── Ingress: SSH (port 22) from 0.0.0.0/0
-└── Egress: All traffic to 0.0.0.0/0 ```
+└── Egress: All traffic to 0.0.0.0/0 
+```
 
 ## Components
 
@@ -61,7 +62,8 @@ staging/
 └── terraform.tfvars (staging-specific values)
 
 prod/
-└── terraform.tfvars (prod-specific values) ```
+└── terraform.tfvars (prod-specific values) 
+```
 
 Each environment can have different:
 - Instance types (dev: t3.micro, prod: t3.small or larger)
