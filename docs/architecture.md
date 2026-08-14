@@ -5,6 +5,7 @@
 This project demonstrates a production-ready multi-environment AWS infrastructure using Infrastructure as Code (Terraform). The architecture is designed for scalability, security, and repeatability across dev, staging, and production environments.
 
 ## Architecture Diagram
+```
 AWS Account (us-west-1)
 └── VPC (10.0.0.0/16)
 ├── Internet Gateway
@@ -16,7 +17,7 @@ AWS Account (us-west-1)
 │
 └── Security Group
 ├── Ingress: SSH (port 22) from 0.0.0.0/0
-└── Egress: All traffic to 0.0.0.0/0
+└── Egress: All traffic to 0.0.0.0/0 ```
 
 ## Components
 
@@ -50,6 +51,7 @@ AWS Account (us-west-1)
 ## Multi-Environment Support
 
 The same Terraform code deploys to multiple environments with different configurations:
+```
 dev/
 ├── main.tf (references)
 ├── variables.tf
@@ -59,7 +61,7 @@ staging/
 └── terraform.tfvars (staging-specific values)
 
 prod/
-└── terraform.tfvars (prod-specific values)
+└── terraform.tfvars (prod-specific values) ```
 
 Each environment can have different:
 - Instance types (dev: t3.micro, prod: t3.small or larger)
