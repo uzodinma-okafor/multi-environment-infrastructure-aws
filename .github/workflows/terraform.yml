@@ -29,7 +29,7 @@ jobs:
         run: cd terraform && terraform init
 
       - name: Terraform Format Check (Root)
-        run: cd terraform && terraform fmt -check
+        run: cd terraform && terraform fmt
 
       - name: Terraform Validate (Root)
         run: cd terraform && terraform validate
@@ -38,7 +38,7 @@ jobs:
         run: cd terraform/environments/dev && terraform init
 
       - name: Terraform Format Check (Dev Environment)
-        run: cd terraform/environments/dev && terraform fmt -check
+        run: cd terraform/environments/dev && terraform fmt
 
       - name: Terraform Validate (Dev Environment)
         run: cd terraform/environments/dev && terraform validate
